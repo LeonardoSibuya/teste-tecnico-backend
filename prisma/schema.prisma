@@ -10,14 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Student {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  update_at DateTime @default(now())
-  sociologia String
-  biologia String
-  artes String
-  geografia String
-  rating Float
+model Bimestre {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  materias  Materia[]
 
-  @@map("students")
+  @@map("bimestres")
+}
+
+model Materia {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  updateAt   DateTime  @default(now())
+  ratings    Float
+  Bimestre   Bimestre? @relation(fields: [bimestreId], references: [id])
+  bimestreId String?   @db.ObjectId
 }
