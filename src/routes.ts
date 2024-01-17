@@ -11,31 +11,47 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new ListBimestreController().handle(request, reply)
     })
 
-    fastify.post("/primeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
-        return new CreateBimestreController().handle(request, reply)
-    })
-
-    fastify.patch("/primeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
-        return new CreateSubjectController().handle(request, reply)
-    })
-
-    fastify.post("/segundobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
-        return new CreateBimestreController().handle(request, reply)
-    })
-
-    fastify.post("/terceirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
-        return new CreateBimestreController().handle(request, reply)
-    })
-
-    fastify.post("/quartobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
-        return new CreateBimestreController().handle(request, reply)
-    })
-
     fastify.put("/atualizarnota", async (request: FastifyRequest, reply: FastifyReply) => {
         return new UpdateRatingController().handle(request, reply)
     })
 
     fastify.delete("/materias", async (request: FastifyRequest, reply: FastifyReply) => {
         return new DeleteSubjectController().handle(request, reply)
+    })
+
+
+    fastify.post("/primeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateBimestreController().handle(request, reply)
+    })
+
+    fastify.patch("/materiaprimeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateSubjectController().handle(request, reply)
+    })
+
+
+    fastify.post("/segundobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateBimestreController().handle(request, reply)
+    })
+
+    fastify.patch("/materiasegundobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateSubjectController().handle(request, reply)
+    })
+
+
+    fastify.post("/terceirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateBimestreController().handle(request, reply)
+    })
+
+    fastify.patch("/materiaterceirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateSubjectController().handle(request, reply)
+    })
+
+
+    fastify.post("/quartobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateBimestreController().handle(request, reply)
+    })
+
+    fastify.patch("/materiaquartobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+        return new CreateSubjectController().handle(request, reply)
     })
 }
