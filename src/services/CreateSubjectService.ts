@@ -17,9 +17,9 @@ class CreateSubjectService {
                 },
             });
 
-            if (existingSubject) {
-                return { message: "Matéria já existe neste bimestre." };
-            }
+            if (existingSubject) return { message: "Matéria já existe neste bimestre." };
+
+            if (rating > 10) throw new Error('A nota deve ser de 0 a 10')
 
             const newSubject = await prismaClient.materia.create({
                 data: {

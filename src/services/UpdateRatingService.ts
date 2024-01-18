@@ -9,6 +9,8 @@ class UpdateRatingService {
     async execute({ id, rating }: UpdateRatingProps) {
         try {
 
+            if (rating > 10) throw new Error('A nota deve ser de 0 a 10')
+
             const updatedSubject = await prismaClient.materia.update({
                 where: {
                     id: id,

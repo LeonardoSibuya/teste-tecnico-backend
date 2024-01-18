@@ -24,7 +24,7 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new CreateBimestreController().handle(request, reply)
     })
 
-    fastify.patch("/materiaprimeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.post("/materiaprimeirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
         return new CreateSubjectController().handle(request, reply)
     })
 
@@ -33,7 +33,7 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new CreateBimestreController().handle(request, reply)
     })
 
-    fastify.patch("/materiasegundobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.post("/materiasegundobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
         return new CreateSubjectController().handle(request, reply)
     })
 
@@ -42,7 +42,7 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new CreateBimestreController().handle(request, reply)
     })
 
-    fastify.patch("/materiaterceirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.post("/materiaterceirobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
         return new CreateSubjectController().handle(request, reply)
     })
 
@@ -51,7 +51,7 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new CreateBimestreController().handle(request, reply)
     })
 
-    fastify.patch("/materiaquartobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.post("/materiaquartobimestre", async (request: FastifyRequest, reply: FastifyReply) => {
         return new CreateSubjectController().handle(request, reply)
     })
 }

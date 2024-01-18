@@ -17,6 +17,7 @@ interface CreateBimestreProps {
 class CreateBimestreService {
     async execute({ bimestre }: CreateBimestreProps) {
         try {
+
             const createdBimestre = await prismaClient.bimestre.create({
                 data: {
                     name: bimestre.name,
