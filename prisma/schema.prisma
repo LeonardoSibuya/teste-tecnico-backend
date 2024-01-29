@@ -11,9 +11,9 @@ datasource db {
 }
 
 model Bimestre {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  materias  Materia[]
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  materias Materia[]
 
   @@map("bimestres")
 }
@@ -21,7 +21,7 @@ model Bimestre {
 model Materia {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   name       String
-  updateAt   DateTime  @default(now())
+  updateAt   DateTime  @updatedAt
   ratings    Float
   Bimestre   Bimestre? @relation(fields: [bimestreId], references: [id])
   bimestreId String?   @db.ObjectId
